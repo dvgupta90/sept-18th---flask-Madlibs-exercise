@@ -1,6 +1,6 @@
 """A madlib game that compliments its users."""
 
-from random import choice
+from random import choice, sample
 
 from flask import Flask, render_template, request
 
@@ -35,11 +35,10 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
-
+    compliments = sample(AWESOMENESS, 3)
     return render_template("compliment.html",
                            person=player,
-                           compliment=compliment)
+                           compliments=compliments)
 
 @app.route('/game')
 def play_game():
@@ -51,16 +50,19 @@ def play_game():
 
 @app.route('/madlib')
 def show_madlib():
+    file_name_templates = ["madlib.html", "madlib1.html"]
+    file_name= choice(file_name_templates)
     color= request.args.get("color")
     noun = request.args.get("noun")
     person = request.args.get("person")
     adjective = request.args.get("adjective")
-    return render_template("madlib.html", color = color, noun =noun, person = person, adjective = adjective)
+    return render_template(file_name, color = color,
+     noun =noun, person = person, adjective = adjective)
 
 
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also
-    # "reloads" our web app if we change the code.
+    # "reloads" our web app if we change the code.div class="finished_game">
 
     app.run(debug=True)
