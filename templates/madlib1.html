@@ -1,17 +1,17 @@
-<!doctype html>
-<html>
-<head>
-  <title>madlib</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
-</head>
-<body>
-   
-    <div class="finished_game">
+{% extends 'base.html' %}
+
+{% block title %} madlib {% endblock %}
+
+{% block content %} <div class="finished_game">
         A vacation is when you take a trip to some place {{adjective}}
 with your {{person}}. Usually you go to some place
 that is near a/an {{color}} ocean. It will cost you many {{noun}}.
         </div>
-    </body>
-</html>
+
+{% endblock %}        
+
+
+
+
 
 

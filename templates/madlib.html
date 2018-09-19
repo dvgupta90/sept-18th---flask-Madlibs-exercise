@@ -1,20 +1,13 @@
-<!doctype html>
-<html>
-<head>
-  <title>madlib</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
-</head>
-<body>
-    <div class="finished_game">
+{% extends 'base.html' %}
+
+{% block title %} Madlibs Story {% endblock %}
+
+{% block content %}  <div class="finished_game">
     There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
 When {{ person }} went to pick it up, it burst into flames in a totally
 {{ adjective }} way.
-</div>
-
-
-    </body>
-</html>
-
+</div> 
+{% endblock %}
 
 
 

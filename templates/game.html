@@ -1,12 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <title>Game</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
-</head>
-<body>
-  
-    <form action="/madlib">
+{% extends 'base.html' %}
+
+{% block title %} Game {% endblock %}
+
+{% block content %} <form action="/madlib">
         <p>
         Tell us a color:<input type = "text" name = "color"> 
         </p>
@@ -21,5 +17,4 @@
         </p>
         <input type= "submit" value = "Jama Karen">
     </form>
-</body>
-</html>
+{% endblock %}

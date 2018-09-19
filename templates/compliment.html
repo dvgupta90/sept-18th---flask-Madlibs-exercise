@@ -1,11 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <title>A Compliment</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
-</head>
-<body>
-    <h1>
+{% extends 'base.html' %}
+
+{% block title %} A Compliment {% endblock %}
+
+{% block content %}  <h1>
     Hi {{ person }}! I think you're:
     <ul>
         {%for compliment in compliments%}
@@ -20,5 +17,6 @@
         <br>
         <input type="submit" value="Submit">
     </form>
-</body>
-</html>
+{% endblock %}        
+
+

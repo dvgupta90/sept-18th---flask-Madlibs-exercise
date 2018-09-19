@@ -1,17 +1,18 @@
-<!doctype html>
-<html>
-<head>
-  <title>Hi There!</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1>Hi There!</h1>
+{% block title %} Hi There {% endblock %}
+
+{% block content %} <h1>Hi There!</h1>
+
 <img src="/static/madlibs.jpg" alt="madlibs">
+
 <form action="/greet">
   What is your name? <input type="text" name="person">
   <input type="submit">
 </form>
 
-</body>
-</html>
+{% endblock %}        
+
+
+
+
