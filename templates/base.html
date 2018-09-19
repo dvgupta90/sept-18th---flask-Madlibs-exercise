@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} title goes here {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='madlibs.css') }}">
+
+   </head>
+   <body>
+       {% block content %} body content goes here {% endblock %}
+
+   
+   <footer>
+       Copyright 2018 BOB
+   </footer>
+   </body> 
+   </html>
